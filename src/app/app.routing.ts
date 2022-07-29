@@ -18,6 +18,7 @@ const appRoutes: Routes = [
     {path: 'form', component: FormsComponent},
     {path: 'movies', component: MoviesComponent},
     {path: 'test-page', component: PageComponent},
+    {path: 'test-page/:name/:last_name', component: PageComponent},
     {path: '**', component: ErrorComponent}
 ];
 

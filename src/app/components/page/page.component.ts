@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-page',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageComponent implements OnInit {
 
-  constructor() { }
+  public name!: string;
+  public last_name!: string;
+
+  constructor(
+    private _route: ActivatedRoute,
+    private _router: Router
+  ) { }
 
   ngOnInit(): void {
+
+    this._route.params.subscribe((params: Params) => {
+      this.name = params['name'];
+      this.last_name = params['last_name'];
+    });
+
   }
 
 }

@@ -25,4 +25,8 @@ export class PageComponent implements OnInit {
 
   }
 
+  redirect(){
+    this._router.navigate(['/test-page', 'Javier', 'Paredes'])
+  }
+
 }
